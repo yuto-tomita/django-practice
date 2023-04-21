@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .dockerenv:/.venv
+      - .:/app
+    ports:
+    - "8080:8080"
+  mysql:
+    image: mysql:8.0
+    volumes:
+      - todo-mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: django-database
+volumes:
+  todo-mysql-data:
