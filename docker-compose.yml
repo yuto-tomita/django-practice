@@ -6,7 +6,7 @@ services:
     command: poetry run python todo/manage.py runserver 0.0.0.0:8000
     volumes:
       - .dockerenv:/.venv
-      - .:/todo
+      - .:/app
     ports:
       - "8000:8000"
     depends_on:
