@@ -3,7 +3,7 @@ version: "3"
 services:
   app:
     build: .
-    command: poetry run python todo/manage.py runserver 0.0.0.0:8000
+    command: poetry run python modules/manage.py runserver 0.0.0.0:8000
     volumes:
       - .dockerenv:/.venv
       - .:/app
