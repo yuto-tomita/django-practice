@@ -1,4 +1,9 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 def index(request):
-  return HttpResponse("HelloWorld!")
+  context = {
+    "property": "this is args"
+  }
+
+  return render(request, "todos/index.html", context)
+
