@@ -1,86 +1,95 @@
 <div class="contaienr">
-	<form action="{% url 'todos:createTodo' %}" method="POST" autocomplete="on" name="create-todo" class="form-wrapper">
-		{% csrf_token %}
-		<div class="form-item">
-			<label for="title" class="form-label">
-				タイトル
-			</label>
-			<input name="title" id="title" type="text" />
-		</div>
-	
-		<div class="form-item">
-			<label for="description" class="form-label">
-				詳細
-			</label>
-			<textarea name="description" id="description" cols="30" rows="10"></textarea>
-		</div>
-	
-		<div class="form-item">
-			<label for="date" class="form-label">
-				期限
-			</label>
-			<input type="date" id="date" name="date">
-		</div>
+  <form
+    action="{% url 'todos:createTodo' %}"
+    method="POST"
+    autocomplete="on"
+    name="create-todo"
+    class="form-wrapper"
+  >
+    {% csrf_token %}
+    <div class="form-item">
+      <label for="title" class="form-label">
+        タイトル
+      </label>
+      <input name="title" id="title" type="text" />
+    </div>
 
-		<div class="form-item">
-			<label for="status" class="form-label">
-				ステータス
-			</label>
+    <div class="form-item">
+      <label for="description" class="form-label">
+        詳細
+      </label>
+      <textarea
+        name="description"
+        id="description"
+        cols="30"
+        rows="10"
+      ></textarea>
+    </div>
 
-			<label for="todo">
-				未着手
-			</label>
-			<input type="radio" name="todo" value="todo">
-	
-			<label for="in_progress">
-				進行中
-			</label>
-			<input type="radio" name="in_progress" value="in_progress">
-	
-			<label for="completed">
-				完了
-			</label>
-			<input type="radio" name="completed" value="completed">
-		</div>
+    <div class="form-item">
+      <label for="date" class="form-label"> 期限 </label>
+      <input type="date" id="date" name="date" />
+    </div>
 
+    <div class="form-item">
+      <label for="status" class="form-label">
+        ステータス
+      </label>
 
-		<button type="submit">
-			投稿
-		</button>
-	</form>
+      <label for="todo"> 未着手 </label>
+      <input type="radio" name="todo" value="todo" />
+
+      <label for="in_progress"> 進行中 </label>
+      <input
+        type="radio"
+        name="in_progress"
+        value="in_progress"
+      />
+
+      <label for="completed"> 完了 </label>
+      <input
+        type="radio"
+        name="completed"
+        value="completed"
+      />
+    </div>
+
+    <button type="submit">投稿</button>
+  </form>
 </div>
 
 <style>
-.form-wrapper {
-	width: 80%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	margin: 0 auto;
-}
+  .form-wrapper {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+  }
 
-.form-item {
-	display: flex;
-	margin-bottom: 20px;
-}
+  .form-item {
+    display: flex;
+    margin-bottom: 20px;
+  }
 
-.form-label {
-	width: 200px;
-}
+  .form-label {
+    width: 200px;
+  }
 
-input[type="text"], input[type="date"] {
-	min-width: 800px;
-}
+  input[type='text'],
+  input[type='date'] {
+    min-width: 800px;
+  }
 
-textarea {
-	min-width: 800px;
-}
+  textarea {
+    min-width: 800px;
+  }
 
-button {
-	width: 100px;
-	text-align: center;
-	margin: 0 auto;
-	display: flex;
-	justify-content: center;
-}
+  button {
+    width: 100px;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
 </style>
